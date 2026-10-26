@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,7 +14,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.2",
     "typescript": "~6.0.2",
-    "vite": "^8.0.12"
+    "vite": "^8.3.5"
   },
   "dependencies": {
     "lucide-react": "^1.21.0",
