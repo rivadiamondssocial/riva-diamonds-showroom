@@ -1,0 +1,219 @@
+.gallery-section {
+  padding: 8rem 0;
+  background-color: var(--bg-cream);
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tab-btn {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  padding: 0.6rem 1.8rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border-beige);
+  background-color: var(--bg-white);
+  transition: var(--transition-luxury);
+}
+
+.filter-tab-btn:hover,
+.filter-tab-btn.active {
+  background-color: var(--text-dark);
+  color: var(--bg-cream);
+  border-color: var(--text-dark);
+}
+
+/* Asymmetric Flowing Masonry Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+  margin-bottom: 7rem;
+}
+
+.gallery-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-beige);
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+  transition: var(--transition-luxury);
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--text-dark);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+}
+
+/* Asymmetric offsets for high-end catalog feel */
+@media (min-width: 992px) {
+  .gallery-card.card-index-1 {
+    transform: translateY(40px);
+  }
+  .gallery-card.card-index-1:hover {
+    transform: translateY(34px);
+  }
+}
+
+.card-visual-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: var(--bg-cream);
+  padding: 1.5rem; /* Breathing room for jewelry images */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Prevent cropping */
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card:hover .card-image {
+  transform: scale(1.06);
+}
+
+.card-overlay-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(250, 248, 245, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition-luxury);
+  backdrop-filter: blur(2px);
+}
+
+.gallery-card:hover .card-overlay-hover {
+  opacity: 1;
+}
+
+.btn-card-admire {
+  background-color: var(--text-dark);
+  color: var(--bg-cream);
+  padding: 0.7rem 1.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(10px);
+  transition: var(--transition-luxury);
+}
+
+.gallery-card:hover .btn-card-admire {
+  transform: translateY(0);
+}
+
+/* Card Info */
+.card-info {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-theme {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.card-footer-meta {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--bg-beige);
+  padding-top: 0.8rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.card-category {
+  color: var(--text-muted);
+}
+
+.card-designer {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* Curation Note */
+.gallery-curation-note {
+  margin-top: 8rem;
+  text-align: center;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-beige);
+  border-bottom: 1px solid var(--border-beige);
+}
+
+.curation-quote {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--text-dark);
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.curation-author {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+}
+
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .filter-tab-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.65rem;
+  }
+  .curation-quote {
+    font-size: 1.2rem;
+  }
+}

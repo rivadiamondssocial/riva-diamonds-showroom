@@ -1,0 +1,153 @@
+.about-section {
+  padding: 8rem 0;
+  background-color: var(--bg-cream);
+  border-top: 1px solid var(--border-beige);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.about-subtitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.about-title {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.about-divider {
+  width: 40px;
+  height: 1px;
+  background-color: var(--text-dark);
+  margin-bottom: 2.2rem;
+  opacity: 0.3;
+}
+
+.about-lead {
+  font-size: 1.15rem;
+  font-family: var(--font-serif);
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.about-body {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+/* About Values */
+.about-values {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.value-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.value-number {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--text-dark);
+  line-height: 1;
+  font-weight: 400;
+}
+
+.value-item h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.value-item p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Visual stack layout */
+.about-visual {
+  position: relative;
+}
+
+.about-image-stack {
+  position: relative;
+  width: 100%;
+  height: 480px;
+}
+
+.stack-img-wrapper {
+  position: absolute;
+  border: 1px solid var(--border-beige);
+  padding: 0.8rem;
+  background-color: var(--bg-white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.stack-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.primary-stack {
+  width: 75%;
+  height: 350px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.secondary-stack {
+  width: 65%;
+  height: 300px;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .about-image-stack {
+    height: 400px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .primary-stack {
+    height: 300px;
+  }
+  .secondary-stack {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-title {
+    font-size: 2.2rem;
+  }
+}

@@ -1,0 +1,247 @@
+/* ══════════════════════════════════════
+   SPLASH INTRO EXPERIENCE - EDITORIAL
+══════════════════════════════════════ */
+
+.splash-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  overflow: hidden;
+  /* Background color underneath the doors */
+  background-color: #000;
+}
+
+/* ── Split Doors ── */
+.splash-door {
+  position: absolute;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+}
+
+.splash-door-left {
+  left: 0;
+  background-color: #111;
+  overflow: hidden;
+}
+
+.splash-door-right {
+  right: 0;
+  background-color: var(--bg-cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Door Leave Animations */
+.open-left {
+  transform: translateX(-100%);
+}
+
+.open-right {
+  transform: translateX(100%);
+}
+
+/* Container fade out */
+.splash-leave {
+  pointer-events: none;
+  animation: hideOverlay 0s linear 1.2s forwards;
+}
+
+@keyframes hideOverlay {
+  to { opacity: 0; visibility: hidden; }
+}
+
+
+/* ── Left Door: Image Styling ── */
+.splash-image-container {
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/spring_song_choker.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: slowZoomIn 20s ease-out forwards;
+}
+
+@keyframes slowZoomIn {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+
+/* ── Right Door: Editorial Content ── */
+.splash-content-editorial {
+  text-align: center;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+}
+
+.splash-logo-wrapper {
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: floatUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s;
+}
+
+.splash-logo {
+  height: 70px;
+  width: auto;
+}
+
+.splash-text-container {
+  margin-bottom: 4rem;
+}
+
+.splash-welcome {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeInText 1.5s ease-out forwards 0.8s;
+}
+
+.splash-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 300;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: floatUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 1s;
+}
+
+.splash-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-muted);
+  opacity: 0;
+  animation: fadeInText 1.5s ease-out forwards 1.2s;
+}
+
+/* ── Action Button ── */
+.splash-action {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.splash-action.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-enter-editorial {
+  background: transparent;
+  border: none;
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  cursor: pointer;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: color 0.4s ease;
+}
+
+.btn-enter-editorial:hover {
+  color: var(--accent-gold);
+}
+
+.btn-line-horizontal {
+  display: block;
+  width: 50px;
+  height: 1px;
+  background-color: var(--text-dark);
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.btn-enter-editorial:hover .btn-line-horizontal {
+  width: 80px;
+  background-color: var(--accent-gold);
+}
+
+/* ── Animations ── */
+@keyframes floatUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .splash-door {
+    width: 100vw;
+  }
+  
+  .splash-door-left {
+    top: 0;
+    height: 65vh; /* Give image more presence */
+  }
+  
+  .splash-image-container {
+    background-size: cover; /* Ensure image fills the space without black bars */
+    background-position: center 20%; /* Focus on the jewelry */
+  }
+  
+  .splash-door-right {
+    top: 65vh;
+    height: 35vh; /* Sleek bottom panel */
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Slide up and down instead of left and right on mobile */
+  .open-left {
+    transform: translateY(-100%);
+  }
+
+  .open-right {
+    transform: translateY(100%);
+  }
+
+  .splash-logo {
+    height: 40px;
+  }
+
+  .splash-content-editorial {
+    padding: 1.5rem;
+    height: 100%;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .splash-logo-wrapper {
+    margin-bottom: 0; /* Managed by gap */
+  }
+  
+  .btn-enter-editorial {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    padding: 0.8rem;
+  }
+}

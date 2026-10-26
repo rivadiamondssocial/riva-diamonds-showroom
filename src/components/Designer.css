@@ -1,0 +1,169 @@
+.designer-section {
+  padding: 8rem 0;
+  background-color: var(--bg-white);
+  border-top: 1px solid var(--bg-beige);
+  border-bottom: 1px solid var(--bg-beige);
+}
+
+.designer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.image-frame-gold {
+  border: 1px solid var(--border-beige);
+  padding: 1.2rem;
+  background-color: var(--bg-cream);
+}
+
+.designer-jewelry-highlight {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.gold-accent-badge {
+  position: absolute;
+  bottom: 2rem;
+  right: -1rem;
+  background-color: var(--text-dark);
+  color: var(--bg-cream);
+  padding: 1rem 1.6rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.badge-year {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.badge-text {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* Designer Details */
+.designer-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.designer-name {
+  font-size: 3.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.designer-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.designer-divider {
+  width: 40px;
+  height: 1px;
+  background-color: var(--text-dark);
+  margin-bottom: 2.5rem;
+  opacity: 0.3;
+}
+
+.philosophy-text {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  font-style: italic;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.creative-aspects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.aspect-card h3 {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+}
+
+.aspect-card p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.signature-signoff {
+  display: flex;
+  flex-direction: column;
+}
+
+.signoff-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.4rem;
+  color: var(--text-dark);
+  line-height: 1;
+}
+
+.signoff-sub {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 992px) {
+  .designer-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .designer-jewelry-highlight {
+    height: 380px;
+  }
+  .gold-accent-badge {
+    right: 1rem;
+    bottom: -1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .designer-name {
+    font-size: 2.5rem;
+  }
+  .philosophy-text {
+    font-size: 1.25rem;
+  }
+  .creative-aspects {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

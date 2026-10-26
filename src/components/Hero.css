@@ -1,0 +1,154 @@
+/* ══════════════════════════════════════
+   MINIMAL HERO SECTION
+   Full-bleed video background,
+   Centered aesthetic text.
+══════════════════════════════════════ */
+
+.hero-minimal {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--bg-cream);
+  padding-top: var(--navbar-height, 110px);
+  box-sizing: border-box;
+}
+
+/* ── Cinematic Video Background ── */
+.hero-video-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  background-color: #111;
+}
+
+.hero-background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* ── Content Container ── */
+.hero-content-centered {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+  max-width: 800px;
+  margin-bottom: 4rem; /* Keep it away from the bottom edge */
+  animation: fadeUpIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeUpIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Text Styles ── */
+.hero-eyebrow-minimal {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #faf8f5;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+}
+
+.hero-title-minimal {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 8vw, 6.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: #faf8f5;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  /* Multi-layered soft drop shadow to create a dark aura for legibility over diamonds */
+  text-shadow: 
+    0 2px 10px rgba(0,0,0,0.9),
+    0 8px 30px rgba(0,0,0,0.7),
+    0 15px 50px rgba(0,0,0,0.5);
+}
+
+.serif-italic-minimal {
+  font-style: italic;
+  text-transform: none;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+.hero-subtitle-minimal {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #faf8f5;
+  font-weight: 400;
+  max-width: 500px;
+  margin: 0 auto 3.5rem auto;
+  text-shadow: 
+    0 2px 8px rgba(0,0,0,0.9),
+    0 4px 15px rgba(0,0,0,0.8);
+}
+
+/* ── Minimal Button ── */
+.btn-hero-minimal {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border: 1px solid #111;
+  background-color: #111;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  transition: var(--transition-luxury);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.btn-hero-minimal:hover {
+  background-color: #faf8f5;
+  color: #111;
+  border-color: #faf8f5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero-minimal {
+    padding-top: var(--navbar-height, 80px);
+  }
+  .hero-content-centered {
+    padding: 0 1rem;
+  }
+  .hero-title-minimal {
+    font-size: 2.6rem;
+    margin-bottom: 1.2rem;
+  }
+  .hero-subtitle-minimal {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  .btn-hero-minimal {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.65rem;
+  }
+}

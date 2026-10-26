@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap');
+
+:root {
+  /* Ultra-Minimal Luxury Color Palette */
+  --bg-cream: #faf8f5;          /* Main Alabaster Cream */
+  --bg-beige: #f3eee7;          /* Soft Warm Beige */
+  --bg-white: #ffffff;          /* Pure White */
+  --border-beige: #e5dec9;      /* Fine Hairline Border */
+  --text-dark: #1f1d1a;          /* Soft Charcoal Dark (avoid harsh black) */
+  --text-muted: #8c8273;         /* Sand Muted Text */
+  --text-light: #ffffff;
+  --accent-gold: #c2a672;        /* Soft Champagne Gold (optional light accent) */
+
+  /* Spacings & Transitions */
+  --transition-luxury: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Montserrat', sans-serif;
+  --max-width: 1300px;
+}
+
+/* Reset and Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Modern Minimalist Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--text-dark);
+}
+
+p {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-luxury);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  transition: var(--transition-luxury);
+}
+
+/* Elegant Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-beige);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Utility Containers */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+/* Editorial Title Styles */
+.luxury-title-wrap {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.luxury-title-wrap h2 {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  word-spacing: 0.1em;
+}
+
+.luxury-title-wrap p {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+}
+
+.luxury-divider {
+  width: 40px;
+  height: 1px;
+  background-color: var(--text-dark);
+  margin: 1.5rem auto 0 auto;
+  opacity: 0.3;
+}
+
+/* Minimal Luxury Button (Thin border, slide animation) */
+.btn-luxury {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border: 1px solid var(--text-dark);
+  color: var(--text-dark);
+  background-color: transparent;
+  position: relative;
+  transition: var(--transition-luxury);
+}
+
+.btn-luxury:hover {
+  background-color: var(--text-dark);
+  color: var(--bg-cream);
+}
+
+.btn-luxury.ochre {
+  background-color: var(--text-dark);
+  color: var(--bg-cream);
+}
+
+.btn-luxury.ochre:hover {
+  background-color: transparent;
+  color: var(--text-dark);
+}
+
+/* Card Transitions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  .luxury-title-wrap h2 {
+    font-size: 2.2rem;
+  }
+}
